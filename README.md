@@ -1,7 +1,7 @@
 # Semester-Project
 Different aspects:
-File I/O__
-Processing__
+File I/O  
+Processing  
 GUI/Control
 
 # File I/O
