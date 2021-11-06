@@ -5,7 +5,7 @@ GUI/Control
 
 File I/O
 Gather metadata info to display
-Store data into an array
+Store data into an array (Pointers)
 Send array to Processing
 Recieve new array to package back into a new wav file
 Use Lancaster's header
@@ -41,11 +41,16 @@ Control:
 Send and recieve information from the other branches
 
 Other
-Classes:
+Classes: Wav, WavReader, 
 Abstract Classes:
-Interface
+Wav struct 
+
+Interface/abstract class
+Little Endian converter
+
+Later
 Inheritance, composition
-Templates?
+Templates? Maybe used for different bit rate during storage
 
 
 Wav file -> binary file->array of binary (unsigned char pointer)-> 
@@ -58,7 +63,7 @@ First 4 bytes ascii name: Hexadecimal 52 49 46 46 = RIFF
 
 More intermediate values in between with 16 bit
 Look into coercion
-big endian vs little endian
+big endian vs little endian 1000 1000 0001
 Wav reader file
 Wav Header Struct
 Wav Class
