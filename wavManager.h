@@ -50,7 +50,6 @@ typedef struct wav_header {
 #include <fstream>
 #include <vector>
 
-#define MAX_16BIT = 65536
 class WavManager{
     private:
         short* buffer = nullptr;
@@ -63,5 +62,7 @@ class WavManager{
         //virtual ~WavManager();
         wav_header getHeader() const;
         std::vector<float> getData() const;
+        void updateHeader(float delay);
+        void updateSoundData(std::vector<float> newData);
 };
 #endif
