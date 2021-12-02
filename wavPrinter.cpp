@@ -27,13 +27,3 @@ void WavPrinter::printWavHeader(wav_header waveHeader){
     printTitle();
     printMeta(waveHeader);
 };
-
-std::string WavPrinter::nullRemover(char array[]){
-    std::string holder;
-    for (int i = 0; i <sizeof(array); i++){
-        if(array[i]!= NULL){
-            array[i] = ' ';
-        }
-    }
-    return std::string(array);
-};
