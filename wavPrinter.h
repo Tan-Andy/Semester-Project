@@ -10,6 +10,5 @@ class WavPrinter{
     public:
         WavPrinter()= default;
         void printWavHeader(wav_header waveHeader);
-        std::string nullRemover(char array[]);
 };
 #endif

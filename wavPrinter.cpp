@@ -1,7 +1,14 @@
 #include "wavPrinter.h"
+#include <iterator>
 
+template <class T, std::size_t N>
+std::ostream& operator<<(std::ostream& os, const std::array<T, N>& array)
+{
+    std::copy(array.cbegin(), array.cend(), std::ostream_iterator<T>(os));
+    return os;
+}
 std::ostream &operator<<(std::ostream &os, const wav_header &waveHeader){
-        os << "Riff: " << std::string(waveHeader.riff_header) << std::endl;
+        os << "Riff: " << waveHeader.riff_header << std::endl;
         os << "Wav Size: " <<waveHeader.wav_size << std::endl;
         os << "Wave Header: " <<waveHeader.wave_header << std::endl;
         os << "fmt header: " <<waveHeader.fmt_header << std::endl;
