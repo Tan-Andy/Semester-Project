@@ -1,5 +1,4 @@
 #include "uInterface.h"
-#include "wavManager.h"
 
 int UInterface::startMenu(){
     int temp;
@@ -17,6 +16,8 @@ int UInterface::processorMenu(){
     std::cout << "1. Normalization" << std::endl;
     std::cout << "2. Echo" << std::endl;
     std::cout << "3. Gain Adjustment" << std::endl;
+    std::cin >> temp;
+    return temp;
 };
 int UInterface::echoMenu(){
     int temp;
@@ -36,3 +37,6 @@ std::string UInterface::fileMenu(){
     std::cin >> fileName;
     return fileName;
 };
+void UInterface::wrongInput(){
+    std::cout << "Invalid input" <<std::endl;
+}
