@@ -3,13 +3,12 @@
 #include <iostream>
 #include <array>
 class UInterface{
-    private:
-        int uChoice = 1;
-        std::array<char,20> fileName;
     public:
-        int menu();
-        int menuPrinter();
+        int startMenu();
         int processorMenu();
+        int echoMenu();
+        int gainMenu();
+        std::string fileMenu();
 };
 
 #endif

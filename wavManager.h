@@ -58,7 +58,7 @@ class WavManager{
         std::vector<float> soundData;
     public:
         WavManager() = default;
-        void readFile(const std::string &fileName);
+        int readFile(const std::string &fileName);
         void writeFile(const std::string &newFileName);
         //virtual ~WavManager();
         wav_header getHeader() const;

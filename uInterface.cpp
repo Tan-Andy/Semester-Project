@@ -1,39 +1,38 @@
 #include "uInterface.h"
 #include "wavManager.h"
 
-int UInterface::menu(){
-    while(uChoice !=0){
-        switch(uChoice){
-            case 1:
-                switch (menuPrinter()){
-                    case 0:
-                        uChoice = 0;
-                        break;
-                    case 1:
-                        std::cout << "Type in wav file of your choice (include .wav)" << std::endl;
-                        std::cin >> fileName >> std::endl;
-                        WavManager wav;
-                        if(wav.readFile(fileName) != 0){
-                            //print metadata
-                            uChoice = 2;
-                        } else {
-                            std::cout << "File does not exist or is not a wav file" << std::endl;
-                        }
-                        break;
-                }
-                break;
-            case 2:
-                switch (processorMenu()){
-                    case 1: 
-                        //normalization
-                    case 2:
-                        //echo
-                    case 3:
-                        //gain adjustment
-                }
-                //save file
-                uChoice = 1;
-                break;
-        }
-    }
-}
+int UInterface::startMenu(){
+    int temp;
+    std::cout << "Welcome to Wav your problems away" << std::endl;
+    std::cout << "---Start Menu---" << std::endl;
+    std::cout << "Enter:" << std::endl;
+    std::cout << "0. Exit" << std::endl;
+    std::cout << "1. Start File Process" << std::endl;
+    std::cin >> temp;
+    return temp;
+};
+int UInterface::processorMenu(){
+    int temp;
+    std::cout << "---Select Processor---" << std::endl;
+    std::cout << "1. Normalization" << std::endl;
+    std::cout << "2. Echo" << std::endl;
+    std::cout << "3. Gain Adjustment" << std::endl;
+};
+int UInterface::echoMenu(){
+    int temp;
+    std::cout << "How much delay do you want?" << std::endl;
+    std::cin >> temp;
+    return temp;
+};
+int UInterface::gainMenu(){
+    int temp;
+    std::cout << "How much gain do you want?" << std::endl;
+    std::cin >> temp;
+    return temp;
+};
+std::string UInterface::fileMenu(){
+    std::string fileName;
+    std::cout << "Type in wav file of your choice (include .wav)" << std::endl;
+    std::cin >> fileName;
+    return fileName;
+};

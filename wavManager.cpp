@@ -1,6 +1,6 @@
 #include "wavManager.h"
 
-void WavManager::readFile(const std::string &fileName){
+int WavManager::readFile(const std::string &fileName){
     std::ifstream file(fileName,std::ios::binary | std::ios::in); 
     if(file.is_open()){ 
         file.read((char*)&wavHeader, sizeof(wav_header)); 
@@ -8,8 +8,9 @@ void WavManager::readFile(const std::string &fileName){
         //mayber add convert here
         file.read((char*)buffer, wavHeader.data_bytes); 
         file.close(); 
+        return 1;
     }else{
-         throw std::runtime_error("File " + fileName + " could not be opened");
+        return 0;
     }
 
     if(wavHeader.bit_depth == 16){
