@@ -47,13 +47,12 @@ typedef struct wav_header {
 // char bytes[]; // Remainder of wave file is bytes 
 } wav_header; 
 //#include "wav.h"
-#include <iostream>
 #include <fstream>
 #include <vector>
 
+
 class WavManager{
     private:
-        short* buffer = nullptr;
         wav_header wavHeader;
         std::vector<float> soundData;
     public:
@@ -63,7 +62,7 @@ class WavManager{
         //virtual ~WavManager();
         wav_header getHeader() const;
         std::vector<float> getData() const;
-        void updateHeader(float delay);
+        int getNumChannels() const;
         void updateSoundData(std::vector<float> newData);
 };
 #endif

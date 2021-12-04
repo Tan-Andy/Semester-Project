@@ -3,13 +3,15 @@
 #include <iostream>
 #include <array>
 #include "wavManager.h"
+
+
 class UInterface{
     public:
         UInterface() = default;
         int startMenu();
         int processorMenu();
         int echoMenu();
-        int gainMenu();
+        float gainMenu();
         std::string fileMenu();
         void wrongInput();
 };

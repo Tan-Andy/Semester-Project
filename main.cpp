@@ -1,9 +1,11 @@
 #include "wavPrinter.h"
 #include "wavManager.h"
 #include "echo.h"
+#include "gain.h"
 #include <iostream>
 #include <array>
 #include "uInterface.h"
+#include "normalize.h"
 
 int main(){
     UInterface UI;
@@ -34,30 +36,45 @@ int main(){
                 break;
             case 2:
                 switch (UI.processorMenu()){
-                    case 1: 
+                    case 1:{
                         //normalization
+                        auto normalData = Normalize::process(wav.getData());
+                        wav.updateSoundData(normalData);
                         uChoice = 1;
                         break;
-                    case 2:
-                        // UI.echoMenu();
+                    }
+                    case 2:{
+                        //echo
+                        float gain = UI.gainMenu();
+                        int delay = UI.echoMenu();
+                        auto echoData = Echo::process(wav.getData(), gain, delay, wav.getNumChannels());
+                        wav.updateSoundData(Normalize::process(echoData));
                         uChoice = 1;
                         break;
-                    case 3:
+                    }
+                    case 3:{
                         //gain adjustment
-                        //UI.gainMenu();
+                        float gain = UI.gainMenu();
+                        auto gainData = Gain::process(wav.getData(), gain);
+                        wav.updateSoundData(gainData);
+                        
                         uChoice = 1;
                         break;
+                    }
                     default:
                         std::system("clear");
                         UI.wrongInput();
                         break;
                 }
                 //save file
-                wav.writeFile("");
+                WavPrinter listy;
+                listy.printWavHeader(wav.getHeader());
+                wav.writeFile("TestOutput.wav");
                 break;
             default:
                 //UI.wrongInput();
                 break;
+            
         }
     }
     return 1;

@@ -25,8 +25,8 @@ int UInterface::echoMenu(){
     std::cin >> temp;
     return temp;
 };
-int UInterface::gainMenu(){
-    int temp;
+float UInterface::gainMenu(){
+    float temp;
     std::cout << "How much gain do you want?" << std::endl;
     std::cin >> temp;
     return temp;
