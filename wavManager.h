@@ -3,7 +3,10 @@
 
 #include <fstream>
 #include <vector>
-
+/**
+ * @brief wav_header struct contains the header data in the wav file.
+ * 
+ */
 typedef struct wav_header { 
 // RIFF Header 
     char riff_header[4]; // Contains "RIFF" 
