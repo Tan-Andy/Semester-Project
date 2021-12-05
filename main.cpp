@@ -1,51 +1,55 @@
 #include "wavPrinter.h"
 #include "wavManager.h"
+#include "uInterface.h"
+#include "normalize.h"
 #include "echo.h"
 #include "gain.h"
 #include <iostream>
-#include <array>
-#include "uInterface.h"
-#include "normalize.h"
-
+/**
+ * @brief Main contains logic to display menus and other functions. It controls the UI, processing, and FILE I/O
+ * 
+ * @return int 
+ */
 int main(){
     UInterface UI;
-    int uChoice =1;
     WavManager wav;
-    
+    WavPrinter printer;
+    int uChoice = 1;
     while(uChoice !=0){
         switch(uChoice){
             case 1:
                 switch (UI.startMenu()){
-                        WavPrinter listy;
-                    case 0:
+                    
+                    case 0:{
                         uChoice = 0;
                         break;
-                    case 1:
+                    }
+                    case 1:{
                         std::system("clear");
-                        if(wav.readFile(UI.fileMenu()) != 0){
-                            listy.printWavHeader(wav.getHeader());
+                        std::string file = UI.fileMenu();
+                        if(wav.readFile(file) != 0){
+                            printer.printWavHeader(wav.getHeader(), file);
                             uChoice = 2;
                         } else {
-                            std::cout << "File does not exist or is not a wav file" << std::endl;
+                            UI.fileError();
                         }
                         break;
+                    }
                     default:
                         UI.wrongInput();
                         break;
                     }
                 break;
             case 2:{
-                std::string newFileName = UI.fileNameMenu();
+                std::string newFileName = UI.newfileNameMenu();
                 switch (UI.processorMenu()){
-                     case 0: {
-                         UI.wrongInput();
+                    case 0: {
                          uChoice = 0;
                          break;
                     }
                     case 1:{
                         //normalization
                         auto normalData = Normalize::process(wav.getData());
-                        wav.updateSoundData(normalData);
                         uChoice = 1;
                         break;
                     }
@@ -62,7 +66,6 @@ int main(){
                         //gain adjustment
                         float gain = UI.gainMenu();
                         auto gainData = Gain::process(wav.getData(), gain);
-                        wav.updateSoundData(gainData);
                         
                         uChoice = 1;
                         break;
@@ -75,11 +78,7 @@ int main(){
                 //save file
                 wav.writeFile(newFileName);
                 break;
-            }
-            default:
-                //UI.wrongInput();
-                break;
-            
+            }       
         }
     }
     return 1;

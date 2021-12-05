@@ -1,36 +1,41 @@
 #include "wavPrinter.h"
-#include <iterator>
-
-template <class T, std::size_t N>
-std::ostream& operator<<(std::ostream& os, const std::array<T, N>& array)
-{
-    std::copy(array.cbegin(), array.cend(), std::ostream_iterator<T>(os));
-    return os;
-}
+/**
+ * @brief Insertion operator overloader, so '<<' leads to printing the metadata of the file
+ * 
+ * @param os :the output stream
+ * @param waveHeader :the wav_header object
+ * @return std::ostream& 
+ */
 std::ostream &operator<<(std::ostream &os, const wav_header &waveHeader){
-        os << "Riff: " << waveHeader.riff_header << std::endl;
-        os << "Wav Size: " <<waveHeader.wav_size << std::endl;
-        os << "Wave Header: " <<waveHeader.wave_header << std::endl;
-        os << "fmt header: " <<waveHeader.fmt_header << std::endl;
-        os << "fmt chunk: " <<waveHeader.fmt_chunk_size << std::endl;
-        os << "Audio Format: " <<waveHeader.audio_format << std::endl;
-        os << "Channels: " <<waveHeader.num_channels << std::endl;
-        os << "Sample Rate: " <<waveHeader.sample_rate << std::endl;
-        os << "Byte Rate: " <<waveHeader.byte_rate << std::endl;
-        os << "Sample Alignment: " <<waveHeader.sample_alignment << std::endl;
-        os << "Bit Depth: " <<waveHeader.bit_depth << std::endl;
-        os << "Data Header: " <<waveHeader.data_header << std::endl;
-        os << "Data Bytes: " <<waveHeader.data_bytes << std::endl;
-        return os;
+    os << "Sample Rate: " <<waveHeader.sample_rate << std::endl;
+    os << "Bit Rate: " <<waveHeader.bit_depth << std::endl;
+    os << "Channels (1 for mono/2 for stereo): " <<waveHeader.num_channels << std::endl;
+    return os;
 };
+/**
+ * @brief prints the cool title for the metadata
+ * 
+ */
 void WavPrinter::printTitle(){
     std::cout<< "------Metadata------" << std::endl;
 };
-void WavPrinter::printMeta(wav_header waveHeader){
-    std:: cout<< waveHeader;
+/**
+ * @brief Prints the filename and metadata.
+ * 
+ * @param waveHeader :wave header we are trying to print.
+ * @param fileName :filename of the given wav file.
+ */
+void WavPrinter::printMeta(wav_header waveHeader, std::string fileName){
+    std::cout << "File Name: " << fileName <<std::endl;
+    std::cout << waveHeader;
 };
-
-void WavPrinter::printWavHeader(wav_header waveHeader){
+/**
+ * @brief Called to print important parts of the wav header (metadata) and title.
+ * 
+ * @param waveHeader :wave header we are trying to print.
+ * @param fileName :filename of the given wav file.
+ */
+void WavPrinter::printWavHeader(wav_header waveHeader, std::string fileName){
     printTitle();
-    printMeta(waveHeader);
+    printMeta(waveHeader, fileName);
 };

@@ -1,7 +1,7 @@
-all: spiky
+all: wav
 
-spiky: main.cpp uInterface.o wavManager.o wavPrinter.o echo.o gain.o normalize.o
-	g++ -std=c++11 -o spiky main.cpp uInterface.o wavManager.o wavPrinter.o echo.o gain.o normalize.o
+wav: main.cpp uInterface.o wavManager.o wavPrinter.o echo.o gain.o normalize.o
+	g++ -std=c++11 -o wav main.cpp uInterface.o wavManager.o wavPrinter.o echo.o gain.o normalize.o
 uInterface: uInterface.h uInterface.cpp
 	g++ -std=c++11 -c uInterface.cpp
 wavManager: wavManager.h wavManager.cpp
@@ -15,4 +15,4 @@ gain: gain.h gain.cpp
 normalize: normalize.h normalize.cpp
 	g++-std=c++11 -c gain.cpp
 clean:
-	rm *.o spiky
+	rm *.o wav
