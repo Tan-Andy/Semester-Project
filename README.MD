@@ -22,7 +22,7 @@ Issues
 
 All functionality is present in the program and has successfully generated the desired output on Phillip's end, however there are a few known issues:
 
-* Values of gain greater than or equal to 1 when inputted into the echo function do not generate correct files.
+* Values of gain greater than or equal to 1 when inputted into the echo function sometimes do not generate correct files.
 
 * The program appears to have different functionality on MacOS and (ANDY'S OS HERE), all functions work correctly for Mac, some output empty files for (ANDY'S OS HERE).
 
