@@ -10,44 +10,44 @@ class UInterface{
     public:
         UInterface() = default;
         /**
-         * @brief startMenu prints out the starting menu and returns the user's choice
+         * @brief startMenu prints out the starting menu
          * 
-         * @return int 
+         * @return int :user's choice
          */
         int startMenu();
         /**
-         * @brief processorMenu prints out a menu of the processors and returns the user's choice.
+         * @brief processorMenu prints out a menu of the processors
          * 
-         * @return int 
+         * @return int :user's choice
          */
         int processorMenu();
         /**
-         * @brief echoMenu prints out the small echo menu and returns the user's choice of delay.
+         * @brief echoMenu prints out the small echo menu.
          * 
-         * @return int 
+         * @return int :the user's choice of delay
          */
         int echoMenu();
         /**
-         * @brief gainMenu prints out the small gain menu and returns the user's choice of gain
+         * @brief gainMenu prints out the small gain menu.
          * 
-         * @return float 
+         * @return float :the user's choice of gain
          */
         float gainMenu();
         /**
-         * @brief fileMenu prints out the small file menu and returns the user's file name.
+         * @brief fileMenu prints out the small file menu.
          * 
-         * @return std::string 
+         * @return std::string :User's file name
          */
         std::string fileMenu();
         /**
-         * @brief wrongInput prints out a small message that the user chose a wrong input.
+         * @brief wrongInput prints out a wrongInput message.
          * 
          */
         void wrongInput();
         /**
-         * @brief newfileNameMenu prints out the new file menu and returns the user's file name for the wav file.
+         * @brief newfileNameMenu prints out the new file menu.
          * 
-         * @return std::string 
+         * @return std::string the user's file name for the wav file.
          */
         std::string newfileNameMenu();
         /**
