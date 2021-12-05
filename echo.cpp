@@ -2,8 +2,9 @@
 #include "echo.h"
 
 
-//We convert everything to -1 to 1 range and then we should be able to use this function for all the echo.
-//Stereo needs twice the delay
+/**
+ * Implements the Echo class
+ */
 
 std::vector<float> Echo::process(const std::vector<float>& inputData, float gain, int delay, int numChannels){
     std::vector<float> outputData;

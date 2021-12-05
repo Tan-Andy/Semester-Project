@@ -1,10 +1,10 @@
 #include "wavManager.h"
 /**
  * @brief readFile creates an input stream to store the header, and if the file is a wav file, it will 
- * store the sound data and convert the data to be between -1 & 1.
+ * store the sound data and convert the data to be between -1 & 1. Returns 1 if file is successfully read, else 0
  * 
- * @param fileName 
- * @return int :returns 1 or 0 to signify if the file is a wav.
+ * @param fileName Name of the file to be read from
+ * @return int 
  */
 int WavManager::readFile(const std::string &fileName){
     std::ifstream file(fileName,std::ios::binary | std::ios::in); 
@@ -46,9 +46,10 @@ int WavManager::readFile(const std::string &fileName){
 }
 /**
  * @brief writeFile creates an output stream to write the header and data into a wav file.
- * It detects the bit depth and stores the data into the buffer for writing.
+ * It detects the bit depth and converts the data to 8 bit or 16 bit accordingly. This data is added to a buffer which
+ * is then written to a file with the specified name.
  * 
- * @param newFileName 
+ * @param newFileName Name of the file to be created/modified by the process.
  */
 void WavManager::writeFile(const std::string &newFileName){
     std::ofstream newFile(newFileName, std::ios::out | std::ios::binary);
@@ -76,29 +77,32 @@ void WavManager::writeFile(const std::string &newFileName){
             newFile.write((char*) buffer, wavHeader.data_bytes);
             delete[] buffer;
     }
-    soundData.clear(); //empties the contents of the vector allowing for repeated use of the program
+    //Clearing the soundData vector to allow the program to process more than 1 file per execution.
+    soundData.clear(); 
+
+    //Closing the file stream
     newFile.close();
 }
 /**
- * @brief getHeader is a getter to return the entire wavHeader struct.
+ * @brief getHeader is a getter to return the entire wavHeader struct. Returned as a wavHeader object.
  * 
- * @return wav_header :returns the entire wav header struct
+ * @return wav_header 
  */
 wav_header WavManager::getHeader() const{
     return wavHeader;
 }
 /**
- * @brief WavManager is a getter to return the soundData vector.
+ * @brief WavManager is a getter to return the soundData vector of floating points.
  * 
- * @return std::vector<float> :returns vector that holds the sound data of the wav file
+ * @return std::vector<float> 
  */
 std::vector<float> WavManager::getData() const{
     return soundData;
 }
 /**
- * @brief getNumChannels is a getter to return the number of channels.
+ * @brief getNumChannels is a getter to return the integer number of channels.
  * 
- * @return int :Number of channels
+ * @return int 
  */
 int WavManager::getNumChannels() const{
     return wavHeader.num_channels;
@@ -107,11 +111,12 @@ int WavManager::getNumChannels() const{
  * @brief updateSoundData updates the data bytes and wav size in the header when echo is used. 
  * The function also expands the vector soundData if echo adds more samples.
  * 
- * @param newData :New data that needs to be copied to SoundData
+ * @param newData New data that needs to be copied to SoundData
  */
 void WavManager::updateSoundData(std::vector<float> newData){
     
     //updating the header
+
     wavHeader.data_bytes = wavHeader.sample_alignment * newData.size() / wavHeader.num_channels;
     wavHeader.wav_size = wavHeader.data_bytes + 36;
 

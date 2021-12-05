@@ -1,6 +1,8 @@
 #include "gain.h"
 
-
+/**
+ * Implements the Gain class
+ */
 
 std::vector<float> Gain::process(const std::vector<float>& inputData, float gain){
     std::vector<float> outputData;
