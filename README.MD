@@ -6,14 +6,14 @@ Split of Work
 --------
 All files were collaborative with the other person providing input and bits of code
 
-*   File I/O (Andy) : wavManager.h, wavManager.cpp ,wavPrinter.h, wavPrinter.cpp
+*   **File I/O (Andy) :** wavManager.h, wavManager.cpp ,wavPrinter.h, wavPrinter.cpp <br>
         - Reading and writing of wav files was done
     
-*   Processing (Phillip) : echo.h, echo.cpp, gain.h, gain.cpp, normalize.h, normalize.cpp
-        - Actual implementation of these into main and wavManager 
+*   **Processing (Phillip) :** echo.h, echo.cpp, gain.h, gain.cpp, normalize.h, normalize.cpp <br>
+        - Actual implementation of these into main and wavManager <br>
         - Necessary variations to handle 8/16 bit or mono/stereo
     
-*   User Interface (Andy) : main.cpp, uInterface.h, uInterface.cpp
+*   **User Interface (Andy) :** main.cpp, uInterface.h, uInterface.cpp <br>
         - Logic flow, console input/output, handling of errors/invalid inputs
     
 
