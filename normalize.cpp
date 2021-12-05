@@ -1,6 +1,5 @@
 #include "normalize.h"
 #include <cmath>
-#include <iostream>
 
 
 

@@ -34,7 +34,8 @@ int main(){
                         break;
                 }
                 break;
-            case 2:
+            case 2:{
+                std::string newFileName = UI.fileNameMenu();
                 switch (UI.processorMenu()){
                     case 0:{
                         UI.wrongInput();
@@ -69,17 +70,18 @@ int main(){
                     default:
                         std::system("clear");
                         UI.wrongInput();
+                        uChoice = 1;
                         break;
                 }
                 //save file
                 WavPrinter listy;
                 listy.printWavHeader(wav.getHeader());
-                wav.writeFile("TestOutput.wav");
+                wav.writeFile(newFileName);
                 break;
+                }
             default:
-                //UI.wrongInput();
+                UI.wrongInput();
                 break;
-            
         }
     }
     return 1;

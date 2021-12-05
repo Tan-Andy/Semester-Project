@@ -14,6 +14,7 @@ class UInterface{
         float gainMenu();
         std::string fileMenu();
         void wrongInput();
+        std::string fileNameMenu();
 };
 
 #endif
