@@ -1,10 +1,6 @@
 #include "normalize.h"
 #include <cmath>
 
-
-
-
-
 std::vector<float> Normalize::process(const std::vector<float>& inputData){
     std::vector<float> outputData;
     outputData.reserve(inputData.size());

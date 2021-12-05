@@ -32,15 +32,15 @@ int main(){
                     default:
                         UI.wrongInput();
                         break;
-                }
+                    }
                 break;
             case 2:{
                 std::string newFileName = UI.fileNameMenu();
                 switch (UI.processorMenu()){
-                    case 0:{
-                        UI.wrongInput();
-                        uChoice = 0;
-                        break;
+                     case 0: {
+                         UI.wrongInput();
+                         uChoice = 0;
+                         break;
                     }
                     case 1:{
                         //normalization
@@ -70,18 +70,16 @@ int main(){
                     default:
                         std::system("clear");
                         UI.wrongInput();
-                        uChoice = 1;
                         break;
                 }
                 //save file
-                WavPrinter listy;
-                listy.printWavHeader(wav.getHeader());
                 wav.writeFile(newFileName);
                 break;
-                }
+            }
             default:
-                UI.wrongInput();
+                //UI.wrongInput();
                 break;
+            
         }
     }
     return 1;

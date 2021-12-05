@@ -41,9 +41,10 @@ std::string UInterface::fileMenu(){
 void UInterface::wrongInput(){
     std::cout << "Invalid input" <<std::endl;
 }
+
 std::string UInterface::fileNameMenu(){
-    std::string fileName;
-    std::cout << "Type in the file name for your new WAV (include .wav)" << std::endl;
-    std::cin >> fileName;
-    return fileName;
+        std::string fileName;
+        std::cout<< "type in the file name for your new WAV (include.wav)" <<std::endl;
+        std::cin >> fileName;
+        return fileName;
 }
