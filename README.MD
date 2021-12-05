@@ -6,7 +6,7 @@ Split of Work
 --------
 All files were collaborative with the other person providing input and bits of code
 
-*   File I/O (Andy) : wavManager.h, wavManager.cpp ,wavPrinter.h, wavPrinter.cpp (great help from Phillip)
+*   File I/O (Andy) : wavManager.h, wavManager.cpp ,wavPrinter.h, wavPrinter.cpp
     
 *   Processing (Phillip) : echo.h, echo.cpp, gain.h, gain.cpp, normalize.h, normalize.cpp
     
