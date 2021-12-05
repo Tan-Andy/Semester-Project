@@ -7,7 +7,7 @@ Split of Work
 All files were collaborative with the other person providing input and bits of code
 
 *   **File I/O (Andy) :** wavManager.h, wavManager.cpp ,wavPrinter.h, wavPrinter.cpp <br>
-        - Reading and writing of wav files was done
+        - Reading and writing of wav files
     
 *   **Processing (Phillip) :** echo.h, echo.cpp, gain.h, gain.cpp, normalize.h, normalize.cpp <br>
         - Actual implementation of these into main and wavManager <br>
