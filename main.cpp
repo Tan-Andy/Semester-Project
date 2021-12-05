@@ -50,6 +50,7 @@ int main(){
                     case 1:{
                         //normalization
                         auto normalData = Normalize::process(wav.getData());
+                        wav.updateSoundData(normalData);
                         uChoice = 1;
                         break;
                     }
@@ -66,7 +67,7 @@ int main(){
                         //gain adjustment
                         float gain = UI.gainMenu();
                         auto gainData = Gain::process(wav.getData(), gain);
-                        
+                        wav.updateSoundData(gainData);
                         uChoice = 1;
                         break;
                     }
