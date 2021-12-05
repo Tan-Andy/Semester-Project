@@ -36,6 +36,11 @@ int main(){
                 break;
             case 2:
                 switch (UI.processorMenu()){
+                    case 0:{
+                        UI.wrongInput();
+                        uChoice = 0;
+                        break;
+                    }
                     case 1:{
                         //normalization
                         auto normalData = Normalize::process(wav.getData());

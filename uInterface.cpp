@@ -13,6 +13,7 @@ int UInterface::startMenu(){
 int UInterface::processorMenu(){
     int temp;
     std::cout << "---Select Processor---" << std::endl;
+    std::cout << "0. Exit" << std::endl;
     std::cout << "1. Normalization" << std::endl;
     std::cout << "2. Echo" << std::endl;
     std::cout << "3. Gain Adjustment" << std::endl;
