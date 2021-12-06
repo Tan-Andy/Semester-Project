@@ -1,0 +1,142 @@
+\hypertarget{classUInterface}{}\doxysection{U\+Interface Class Reference}
+\label{classUInterface}\index{UInterface@{UInterface}}
+
+
+\mbox{\hyperlink{classUInterface}{U\+Interface}} is a class that is solely made of functions that print menus and return user input.  
+
+
+
+
+{\ttfamily \#include $<$u\+Interface.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classUInterface_a4e982a6c00b522a77fd1dc10202f1f39}{start\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em start\+Menu prints out the starting menu \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUInterface_a6358cb3b08a24dbf30fd4723f8210e93}{processor\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em processor\+Menu prints out a menu of the processors \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUInterface_a82d8a695ec9249ba894fd325e945461f}{echo\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em echo\+Menu prints out the small echo menu. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classUInterface_aeeb8d8727d5a80c17f68ea97d7a9682d}{gain\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em gain\+Menu prints out the small gain menu. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUInterface_a7561a32dc19f0c3109cec7fea9aa671e}{file\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em file\+Menu prints out the small file menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUInterface_a64eb5b958e1fb9425e35a5cca4ee89e1}{wrong\+Input}} ()
+\begin{DoxyCompactList}\small\item\em wrong\+Input prints out a wrong\+Input message. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUInterface_a3c09a39367ed077f3fcdff07fad9e82a}{newfile\+Name\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em newfile\+Name\+Menu prints out the new file menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUInterface_a331a17454938a46877c446904b500032}{file\+Error}} ()
+\begin{DoxyCompactList}\small\item\em file\+Error prints out an error message due to invalid file type or file could not be found. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classUInterface}{U\+Interface}} is a class that is solely made of functions that print menus and return user input. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUInterface_a82d8a695ec9249ba894fd325e945461f}\label{classUInterface_a82d8a695ec9249ba894fd325e945461f}} 
+\index{UInterface@{UInterface}!echoMenu@{echoMenu}}
+\index{echoMenu@{echoMenu}!UInterface@{UInterface}}
+\doxysubsubsection{\texorpdfstring{echoMenu()}{echoMenu()}}
+{\footnotesize\ttfamily int U\+Interface\+::echo\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+echo\+Menu prints out the small echo menu. 
+
+\begin{DoxyReturn}{Returns}
+int \+:the user\textquotesingle{}s choice of delay 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUInterface_a331a17454938a46877c446904b500032}\label{classUInterface_a331a17454938a46877c446904b500032}} 
+\index{UInterface@{UInterface}!fileError@{fileError}}
+\index{fileError@{fileError}!UInterface@{UInterface}}
+\doxysubsubsection{\texorpdfstring{fileError()}{fileError()}}
+{\footnotesize\ttfamily void U\+Interface\+::file\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+file\+Error prints out an error message due to invalid file type or file could not be found. 
+
+\mbox{\Hypertarget{classUInterface_a7561a32dc19f0c3109cec7fea9aa671e}\label{classUInterface_a7561a32dc19f0c3109cec7fea9aa671e}} 
+\index{UInterface@{UInterface}!fileMenu@{fileMenu}}
+\index{fileMenu@{fileMenu}!UInterface@{UInterface}}
+\doxysubsubsection{\texorpdfstring{fileMenu()}{fileMenu()}}
+{\footnotesize\ttfamily std\+::string U\+Interface\+::file\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+file\+Menu prints out the small file menu. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string \+:User\textquotesingle{}s file name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUInterface_aeeb8d8727d5a80c17f68ea97d7a9682d}\label{classUInterface_aeeb8d8727d5a80c17f68ea97d7a9682d}} 
+\index{UInterface@{UInterface}!gainMenu@{gainMenu}}
+\index{gainMenu@{gainMenu}!UInterface@{UInterface}}
+\doxysubsubsection{\texorpdfstring{gainMenu()}{gainMenu()}}
+{\footnotesize\ttfamily float U\+Interface\+::gain\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gain\+Menu prints out the small gain menu. 
+
+\begin{DoxyReturn}{Returns}
+float \+:the user\textquotesingle{}s choice of gain 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUInterface_a3c09a39367ed077f3fcdff07fad9e82a}\label{classUInterface_a3c09a39367ed077f3fcdff07fad9e82a}} 
+\index{UInterface@{UInterface}!newfileNameMenu@{newfileNameMenu}}
+\index{newfileNameMenu@{newfileNameMenu}!UInterface@{UInterface}}
+\doxysubsubsection{\texorpdfstring{newfileNameMenu()}{newfileNameMenu()}}
+{\footnotesize\ttfamily std\+::string U\+Interface\+::newfile\+Name\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+newfile\+Name\+Menu prints out the new file menu. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string the user\textquotesingle{}s file name for the wav file. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUInterface_a6358cb3b08a24dbf30fd4723f8210e93}\label{classUInterface_a6358cb3b08a24dbf30fd4723f8210e93}} 
+\index{UInterface@{UInterface}!processorMenu@{processorMenu}}
+\index{processorMenu@{processorMenu}!UInterface@{UInterface}}
+\doxysubsubsection{\texorpdfstring{processorMenu()}{processorMenu()}}
+{\footnotesize\ttfamily int U\+Interface\+::processor\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+processor\+Menu prints out a menu of the processors 
+
+\begin{DoxyReturn}{Returns}
+int \+:user\textquotesingle{}s choice 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUInterface_a4e982a6c00b522a77fd1dc10202f1f39}\label{classUInterface_a4e982a6c00b522a77fd1dc10202f1f39}} 
+\index{UInterface@{UInterface}!startMenu@{startMenu}}
+\index{startMenu@{startMenu}!UInterface@{UInterface}}
+\doxysubsubsection{\texorpdfstring{startMenu()}{startMenu()}}
+{\footnotesize\ttfamily int U\+Interface\+::start\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+start\+Menu prints out the starting menu 
+
+\begin{DoxyReturn}{Returns}
+int \+:user\textquotesingle{}s choice 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUInterface_a64eb5b958e1fb9425e35a5cca4ee89e1}\label{classUInterface_a64eb5b958e1fb9425e35a5cca4ee89e1}} 
+\index{UInterface@{UInterface}!wrongInput@{wrongInput}}
+\index{wrongInput@{wrongInput}!UInterface@{UInterface}}
+\doxysubsubsection{\texorpdfstring{wrongInput()}{wrongInput()}}
+{\footnotesize\ttfamily void U\+Interface\+::wrong\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+wrong\+Input prints out a wrong\+Input message. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+u\+Interface.\+h\item 
+u\+Interface.\+cpp\end{DoxyCompactItemize}

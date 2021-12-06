@@ -1,0 +1,48 @@
+\hypertarget{classNormalize}{}\doxysection{Normalize Class Reference}
+\label{classNormalize}\index{Normalize@{Normalize}}
+
+
+Outlines the \mbox{\hyperlink{classNormalize}{Normalize}} class which contains a single process to normalize a vector of floating points.  
+
+
+
+
+{\ttfamily \#include $<$normalize.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ float $>$ \mbox{\hyperlink{classNormalize_a6c522e44378e1aeb1554098ceb6fad35}{process}} (const std\+::vector$<$ float $>$ \&input)
+\begin{DoxyCompactList}\small\item\em The process method in the normalize class takes a vector of floating point values, find the maximum absolute value contained in that vector, then divides every element of the vector by that value, thus normalizing it to between -\/1 and 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Outlines the \mbox{\hyperlink{classNormalize}{Normalize}} class which contains a single process to normalize a vector of floating points. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNormalize_a6c522e44378e1aeb1554098ceb6fad35}\label{classNormalize_a6c522e44378e1aeb1554098ceb6fad35}} 
+\index{Normalize@{Normalize}!process@{process}}
+\index{process@{process}!Normalize@{Normalize}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Normalize\+::process (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{input\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The process method in the normalize class takes a vector of floating point values, find the maximum absolute value contained in that vector, then divides every element of the vector by that value, thus normalizing it to between -\/1 and 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Address to a vector containing the sound data in floating point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$float$>$
+\end{DoxyReturn}
+Implements the \mbox{\hyperlink{classNormalize}{Normalize}} class 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+normalize.\+h\item 
+normalize.\+cpp\end{DoxyCompactItemize}

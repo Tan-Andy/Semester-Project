@@ -1,0 +1,54 @@
+\hypertarget{classEcho}{}\doxysection{Echo Class Reference}
+\label{classEcho}\index{Echo@{Echo}}
+
+
+The echo class provides a static function to process a vector containing sound data by applying an echo.  
+
+
+
+
+{\ttfamily \#include $<$echo.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ float $>$ \mbox{\hyperlink{classEcho_ab46861ecbcc32026ed5e23c03afb098a}{process}} (const std\+::vector$<$ float $>$ \&input, float gain, int delay, int numchannels)
+\begin{DoxyCompactList}\small\item\em The process in the echo class takes a vector containing floating points, then takes a given value of the vector multiplies it by a scalar gain, then adds it back into the vector after some delay. This creates an echo effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The echo class provides a static function to process a vector containing sound data by applying an echo. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEcho_ab46861ecbcc32026ed5e23c03afb098a}\label{classEcho_ab46861ecbcc32026ed5e23c03afb098a}} 
+\index{Echo@{Echo}!process@{process}}
+\index{process@{process}!Echo@{Echo}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Echo\+::process (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{input\+Data,  }\item[{float}]{gain,  }\item[{int}]{delay,  }\item[{int}]{num\+Channels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The process in the echo class takes a vector containing floating points, then takes a given value of the vector multiplies it by a scalar gain, then adds it back into the vector after some delay. This creates an echo effect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Address to a vector containing the sound data in floating point \\
+\hline
+{\em gain} & Floating point scalar multiplier of how loud the echo should be, gain should be between 0 and 1 noninclusive \\
+\hline
+{\em delay} & Integer value of how long after the initial sound should the sound be added back into the function, this value is in number of samples \\
+\hline
+{\em numchannels} & Integer value of the number of channels that sound is being sampled from, should be 1 for mono and 2 for stero this value is used to calculate the true delay of the sample in order to account for stereo files \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$float$>$
+\end{DoxyReturn}
+Implements the \mbox{\hyperlink{classEcho}{Echo}} class 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+echo.\+h\item 
+echo.\+cpp\end{DoxyCompactItemize}

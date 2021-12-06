@@ -1,3 +1,4 @@
+/** @file */
 #include "wavPrinter.h"
 #include "wavManager.h"
 #include "uInterface.h"

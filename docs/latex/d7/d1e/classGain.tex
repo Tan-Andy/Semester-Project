@@ -1,0 +1,50 @@
+\hypertarget{classGain}{}\doxysection{Gain Class Reference}
+\label{classGain}\index{Gain@{Gain}}
+
+
+Outlines the gain class which contains a method to multiply elements of a vector by scalar value.  
+
+
+
+
+{\ttfamily \#include $<$gain.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ float $>$ \mbox{\hyperlink{classGain_afff0b1a3cc357b3a9d06d5e940fcfa3b}{process}} (const std\+::vector$<$ float $>$ \&input, float gain)
+\begin{DoxyCompactList}\small\item\em The process method in the gain class takes each element of a vector of floating points and multiplies it by a specified value to modify the overall amplitude of the wav file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Outlines the gain class which contains a method to multiply elements of a vector by scalar value. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGain_afff0b1a3cc357b3a9d06d5e940fcfa3b}\label{classGain_afff0b1a3cc357b3a9d06d5e940fcfa3b}} 
+\index{Gain@{Gain}!process@{process}}
+\index{process@{process}!Gain@{Gain}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Gain\+::process (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{input\+Data,  }\item[{float}]{gain }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The process method in the gain class takes each element of a vector of floating points and multiplies it by a specified value to modify the overall amplitude of the wav file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Address to a vector containing the sound data in floating point \\
+\hline
+{\em gain} & Floating point scalar multiplier of how much to change the amplitude of the wav. Values of gain close to 0 or much greater than 1 may lead to inaudible files. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$float$>$
+\end{DoxyReturn}
+Implements the \mbox{\hyperlink{classGain}{Gain}} class 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gain.\+h\item 
+gain.\+cpp\end{DoxyCompactItemize}

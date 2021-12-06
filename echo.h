@@ -13,7 +13,7 @@ class Echo {
          * @brief The process in the echo class takes a vector containing floating points, then takes a given value of the vector
          * multiplies it by a scalar gain, then adds it back into the vector after some delay. This creates an echo effect.
          * 
-         * @param input Vector containing the sound data in floating point
+         * @param input Address to a vector containing the sound data in floating point 
          * @param gain Floating point scalar multiplier of how loud the echo should be, gain should be between 0 and 1 noninclusive
          * @param delay Integer value of how long after the initial sound should the sound be added back into the function, this 
          * value is in number of samples

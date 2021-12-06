@@ -1,0 +1,127 @@
+\hypertarget{classWavManager}{}\doxysection{Wav\+Manager Class Reference}
+\label{classWavManager}\index{WavManager@{WavManager}}
+
+
+The \mbox{\hyperlink{classWavManager}{Wav\+Manager}} class is in charge of getting and setting parts of the wav file. Additionally, it handles reading and writing wav files.  
+
+
+
+
+{\ttfamily \#include $<$wav\+Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classWavManager_a98e4296fc78304eb9a3fe8c060261eee}{read\+File}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em read\+File creates an input stream to store the header, and if the file is a wav file, it will store the sound data and convert the data to be between -\/1 \& 1. Returns 1 if file is successfully read, else 0 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWavManager_a8a703e215090568f3154efb70459beda}{write\+File}} (const std\+::string \&new\+File\+Name)
+\begin{DoxyCompactList}\small\item\em write\+File creates an output stream to write the header and data into a wav file. It detects the bit depth and converts the data to 8 bit or 16 bit accordingly. This data is added to a buffer which is then written to a file with the specified name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structwav__header}{wav\+\_\+header}} \mbox{\hyperlink{classWavManager_a80ab364db12dc6acaafb935ddaf5e491}{get\+Header}} () const
+\begin{DoxyCompactList}\small\item\em Get the Header object. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classWavManager_a13d42e77c319d96cc8c7cd1e66de4d82}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Get the Data object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWavManager_a2f17060c3e9b3f41f8c458d3fd576288}{get\+Num\+Channels}} () const
+\begin{DoxyCompactList}\small\item\em Get the Num Channels object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWavManager_a1935a1529de845f531a019d34cd5b297}{update\+Sound\+Data}} (std\+::vector$<$ float $>$ new\+Data)
+\begin{DoxyCompactList}\small\item\em update\+Sound\+Data updates the data bytes and wav size in the header when echo is used. The function also expands the vector sound\+Data if echo adds more samples. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classWavManager}{Wav\+Manager}} class is in charge of getting and setting parts of the wav file. Additionally, it handles reading and writing wav files. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWavManager_a13d42e77c319d96cc8c7cd1e66de4d82}\label{classWavManager_a13d42e77c319d96cc8c7cd1e66de4d82}} 
+\index{WavManager@{WavManager}!getData@{getData}}
+\index{getData@{getData}!WavManager@{WavManager}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Wav\+Manager\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Data object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$float$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWavManager_a80ab364db12dc6acaafb935ddaf5e491}\label{classWavManager_a80ab364db12dc6acaafb935ddaf5e491}} 
+\index{WavManager@{WavManager}!getHeader@{getHeader}}
+\index{getHeader@{getHeader}!WavManager@{WavManager}}
+\doxysubsubsection{\texorpdfstring{getHeader()}{getHeader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structwav__header}{wav\+\_\+header}} Wav\+Manager\+::get\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Header object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structwav__header}{wav\+\_\+header}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWavManager_a2f17060c3e9b3f41f8c458d3fd576288}\label{classWavManager_a2f17060c3e9b3f41f8c458d3fd576288}} 
+\index{WavManager@{WavManager}!getNumChannels@{getNumChannels}}
+\index{getNumChannels@{getNumChannels}!WavManager@{WavManager}}
+\doxysubsubsection{\texorpdfstring{getNumChannels()}{getNumChannels()}}
+{\footnotesize\ttfamily int Wav\+Manager\+::get\+Num\+Channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Num Channels object. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWavManager_a98e4296fc78304eb9a3fe8c060261eee}\label{classWavManager_a98e4296fc78304eb9a3fe8c060261eee}} 
+\index{WavManager@{WavManager}!readFile@{readFile}}
+\index{readFile@{readFile}!WavManager@{WavManager}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily int Wav\+Manager\+::read\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+read\+File creates an input stream to store the header, and if the file is a wav file, it will store the sound data and convert the data to be between -\/1 \& 1. Returns 1 if file is successfully read, else 0 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Name of the file to be read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWavManager_a1935a1529de845f531a019d34cd5b297}\label{classWavManager_a1935a1529de845f531a019d34cd5b297}} 
+\index{WavManager@{WavManager}!updateSoundData@{updateSoundData}}
+\index{updateSoundData@{updateSoundData}!WavManager@{WavManager}}
+\doxysubsubsection{\texorpdfstring{updateSoundData()}{updateSoundData()}}
+{\footnotesize\ttfamily void Wav\+Manager\+::update\+Sound\+Data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$}]{new\+Data }\end{DoxyParamCaption})}
+
+
+
+update\+Sound\+Data updates the data bytes and wav size in the header when echo is used. The function also expands the vector sound\+Data if echo adds more samples. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Data} & New data that needs to be copied to Sound\+Data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWavManager_a8a703e215090568f3154efb70459beda}\label{classWavManager_a8a703e215090568f3154efb70459beda}} 
+\index{WavManager@{WavManager}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!WavManager@{WavManager}}
+\doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
+{\footnotesize\ttfamily void Wav\+Manager\+::write\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+write\+File creates an output stream to write the header and data into a wav file. It detects the bit depth and converts the data to 8 bit or 16 bit accordingly. This data is added to a buffer which is then written to a file with the specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+File\+Name} & Name of the file to be created/modified by the process. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+wav\+Manager.\+h\item 
+wav\+Manager.\+cpp\end{DoxyCompactItemize}
