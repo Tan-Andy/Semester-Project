@@ -48,4 +48,4 @@ There were a few main challenges for us, mostly at the beginning of the project:
 
 ### UML DIAGRAM
 
-#### Quantization (bit depth)
+![](images/placeholder.png)
