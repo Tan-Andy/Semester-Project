@@ -16,11 +16,13 @@ int main(){
     WavManager wav;
     WavPrinter printer;
     int uChoice = 1;
+    //uChoice = 0 exits the menu while loop
     while(uChoice !=0){
+        //case 1: start menu/case 2: processor menu
         switch(uChoice){
             case 1:
+                //case 0: exit/case 1: file
                 switch (UI.startMenu()){
-                    
                     case 0:{
                         uChoice = 0;
                         break;
@@ -42,7 +44,7 @@ int main(){
                     }
                 break;
             case 2:{
-                std::string newFileName = UI.newfileNameMenu();
+                std::string newFileName;
                 switch (UI.processorMenu()){
                     case 0: {
                          uChoice = 0;
@@ -52,6 +54,7 @@ int main(){
                         //normalization
                         auto normalData = Normalize::process(wav.getData());
                         wav.updateSoundData(normalData);
+                        newFileName = UI.newfileNameMenu();
                         uChoice = 1;
                         break;
                     }
@@ -61,6 +64,7 @@ int main(){
                         int delay = UI.echoMenu();
                         auto echoData = Echo::process(wav.getData(), gain, delay, wav.getNumChannels());
                         wav.updateSoundData(Normalize::process(echoData));
+                        newFileName = UI.newfileNameMenu();
                         uChoice = 1;
                         break;
                     }
@@ -69,6 +73,7 @@ int main(){
                         float gain = UI.gainMenu();
                         auto gainData = Gain::process(wav.getData(), gain);
                         wav.updateSoundData(gainData);
+                        newFileName = UI.newfileNameMenu();
                         uChoice = 1;
                         break;
                     }
@@ -78,7 +83,9 @@ int main(){
                         break;
                 }
                 //save file
-                wav.writeFile(newFileName);
+                if(uChoice = 1){
+                    wav.writeFile(newFileName);
+                }
                 break;
             }       
         }
