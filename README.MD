@@ -48,4 +48,4 @@ There were a few main challenges for us, mostly at the beginning of the project:
 
 ### UML DIAGRAM
 
-![](images/placeholder.png)
+![UML Diagram](images/placeholder.png)
