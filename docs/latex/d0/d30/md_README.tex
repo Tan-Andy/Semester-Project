@@ -1,0 +1,44 @@
+Basic Level Project \hypertarget{md_README_autotoc_md1}{}\doxysection{Group 22 Phillip Damke \& Andy Tan}\label{md_README_autotoc_md1}
+\hypertarget{md_README_autotoc_md2}{}\doxysubsection{Split of Work}\label{md_README_autotoc_md2}
+All files were collaborative with the other person providing input and bits of code
+
+
+\begin{DoxyItemize}
+\item {\bfseries{File I/O (Andy) \+:}} \mbox{\hyperlink{wavManager_8h_source}{wav\+Manager.\+h}}, wav\+Manager.\+cpp ,\mbox{\hyperlink{wavPrinter_8h_source}{wav\+Printer.\+h}}, wav\+Printer.\+cpp ~\newline
+
+\begin{DoxyItemize}
+\item Reading and writing of wav files
+\end{DoxyItemize}
+\item {\bfseries{Processing (Phillip) \+:}} \mbox{\hyperlink{echo_8h_source}{echo.\+h}}, echo.\+cpp, \mbox{\hyperlink{gain_8h_source}{gain.\+h}}, gain.\+cpp, \mbox{\hyperlink{normalize_8h_source}{normalize.\+h}}, normalize.\+cpp ~\newline
+
+\begin{DoxyItemize}
+\item Actual implementation of these into main and wav\+Manager ~\newline
+
+\item Necessary variations to handle 8/16 bit or mono/stereo
+\end{DoxyItemize}
+\item {\bfseries{User Interface (Andy) \+:}} \mbox{\hyperlink{main_8cpp}{main.\+cpp}}, \mbox{\hyperlink{uInterface_8h_source}{u\+Interface.\+h}}, u\+Interface.\+cpp ~\newline
+
+\begin{DoxyItemize}
+\item Logic flow, console input/output, handling of errors/invalid inputs
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md3}{}\doxysubsection{Issues}\label{md_README_autotoc_md3}
+All functionality is present in the program and has successfully generated the desired output on Phillip\textquotesingle{}s end, however there are a few known issues\+:
+
+
+\begin{DoxyItemize}
+\item Values of gain greater than or equal to 1 when inputted into the echo function sometimes do not generate correct files.
+\item The program did not seem to work on windows, the OS that Andy used for his coding. Specifically the processes calling the normalization function (echo and normalize). When calling these the file would frequently just be 0\textquotesingle{}s all the way through, we were unable to come to a good conclusion as to why this happened as the program worked perfectly for Phillip, who did the coding on Mac\+OS. Ultimately we were able to generate all the processed files for each of the input files on the Mac end, but not on windows.
+\item In theory the program should be able to do all processing from a single execution of the program, however in our testing for best results the program should be exited between each processing, it does not need to be recompiled.
+\item Outlier values of gain may cause inaudible files in the gain functions as there is currently no bounds check implemented. All values between 0 and 1 work well, values above 1 vary depending on the inputted file.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md4}{}\doxysubsection{Challenges}\label{md_README_autotoc_md4}
+There were a few main challenges for us, mostly at the beginning of the project\+:
+
+
+\begin{DoxyItemize}
+\item It was difficult to figure out what needed to change between 8 bit and 16 bit, and mono and stereo at first, mostly because it took us some time and the help of the videos to figure out how were were actually inputting our data. From there we had to decide on how to actually implement it without doing a specific function for each type of sound i.\+e. having 3 echo functions, 3 normalize, and 3 gain. Fortunately we were able to modify the information in the video and generalize it to handle all 3 types of audio.
+\item Because the idea of sound files was pretty new to both of us, it was difficult to understand exaclty how things worked and to know how actions we took affeceted it. For instance, there was difficulty in stereo where the first half of the file was being processed normally but the other half was constant static at full volume. To fix this we had to go in and modify how we read files to care about the number of channels and increase the amount of data that was read to actually make sure were gathering the correct data.
+\item We were missing 1 of our group members which certainly did not help the work load.
+\item We struggled to find appropriate situations to use certain c++ features, for instance inheritance for some of the features failed to be convincing enough over some of its alternatives. As a result we probably have some design choices that could be combined into one or two files.
+\item It was very difficult to actually know if your code was working until you had already written a significant amount of code. For us we were not able to test our processors were working until we had the file input done, file output done, and all of the inbetween in order to begin testing. i.\+e. the only thing we could do was make sure it compiled, but we did not know if it worked until about 70\% of the way through the project.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md5}{}\doxysubsubsection{U\+M\+L D\+I\+A\+G\+R\+AM}\label{md_README_autotoc_md5}
+ 
